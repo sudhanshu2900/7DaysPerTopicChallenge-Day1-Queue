@@ -1,0 +1,29 @@
+PROBLEM: N = 4
+         Queue = 4 3 2 1 
+
+Output: 
+        Queue = 1 2 3 4
+
+Explanation: After reversing the given elements of the queue , the resultant queue will be 1 2 3 4.
+
+SOLUTION:
+
+queue<int> rev(queue<int> q)
+{
+    // add code here.
+    stack<int> s;
+    while(!q.empty()){
+        s.push(q.front());
+        q.pop();
+    }
+    while(s.size()>0){
+        q.push(s.top());
+        s.pop();
+    }
+    return q;
+}
+
+
+
+
+
